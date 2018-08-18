@@ -17,5 +17,6 @@ setup(
     url='andreztz.github.io',
     license='MIT',
     packages=find_packages(),
-    install_requires=['requests']
+    install_requires=['requests'],
+    entry_points={'console_scripts': ['ztranslator=translator.__main__:main']}
 )

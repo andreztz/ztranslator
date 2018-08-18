@@ -23,6 +23,7 @@ from requests.utils import quote
 
 class Translator:
     '''mymemory.translated.net'''
+
     def __init__(self, to_lang, from_lang='eng'):
         self.to_lang = to_lang
         self.from_lang = from_lang
@@ -56,7 +57,7 @@ class Translator:
             f'&langpair={self.from_lang}|{self.to_lang}')
         _headers = {}
         _url = _base_url + _api_url
-        resp = get(_url) 
+        resp = get(_url)
         return resp.json()
 
 
@@ -64,8 +65,6 @@ def main():
     trans = Translator(to_lang='pt')
     text = trans.translate('You can also use it as "&langpair=pt|it"a Python module in your code')
     print(text)
-
-
 
 if __name__ == "__main__":
     main()

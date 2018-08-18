@@ -1,3 +1,3 @@
-from translate import Translator
+from .translate import Translator
 
 __all__ = [Translator]
