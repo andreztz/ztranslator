@@ -59,12 +59,3 @@ class Translator:
         _url = _base_url + _api_url
         resp = get(_url)
         return resp.json()
-
-
-def main():
-    trans = Translator(to_lang='pt')
-    text = trans.translate('You can also use it as "&langpair=pt|it"a Python module in your code')
-    print(text)
-
-if __name__ == "__main__":
-    main()
