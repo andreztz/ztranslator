@@ -39,8 +39,6 @@ _For more examples and usage, please refer to the [Wiki][wiki]._
 
 ## Development setup
 
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
-
 ```sh
 virtualenv venv
 source venv/bin/activate
@@ -50,7 +48,7 @@ pip install -r requirements.txt
 
 ## Release History
 
-- 0.0.1
+- 0.0.3
   - Work in progress
 
 ## Meta
