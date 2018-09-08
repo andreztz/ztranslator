@@ -23,7 +23,7 @@ This is a simple, yet powerful command line translator with mymemory.translated.
     Out[3]: 'Digite copyright, créditos ou licença para mais informações'
 ```
 
-## Usage example as Script
+## Usage as Script
 
 ```sh
     $ python -m translator --help
@@ -35,17 +35,6 @@ or
     $ ztranslator --help
 ```
 
-_For more examples and usage, please refer to the [Wiki][wiki]._
-
-## Development setup
-
-```sh
-virtualenv venv
-source venv/bin/activate
-
-pip install -r requirements.txt
-```
-
 ## Release History
 
 - 0.0.3
@@ -54,8 +43,6 @@ pip install -r requirements.txt
 ## Meta
 
 André Santos – [@ztzandre](https://twitter.com/ztzandre) – andreztz@gmail.com
-
-Distributed under the XYZ license. See `LICENSE` for more information.
 
 [https://github.com/andreztz/ztranslator](https://github.com/andreztz/)
 
@@ -68,10 +55,3 @@ Distributed under the XYZ license. See `LICENSE` for more information.
 5. Create a new Pull Request
 
 <!-- Markdown link & img dfn's -->
-
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[wiki]: https://github.com/yourname/yourproject/wiki
