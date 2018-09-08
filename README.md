@@ -12,7 +12,7 @@ This is a simple, yet powerful command line translator with mymemory.translated.
     $ pip install ztranslator
 ```
 
-## Usage as module
+## Usage as Module
 
 ```sh
     In [1]: from translator import Translator
