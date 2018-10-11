@@ -1,20 +1,32 @@
-# ZTranslator
+# ztranslator
 
-> ztranslator
-
-This is a simple, yet powerful command line translator with mymemory.translated.net translate behind it. You can also use it as a Python module in your code.
+Simples tradutor de linha de comando, com mymemory.translated.net por trás. Você também pode usá-lo como um módulo python no seu código.
 
 ![](header.png)
 
-## Installation
+## Instalação:
 
 ```sh
     $ pip install ztranslator
 ```
 
-## Usage as Module
+## Exemplos de uso:
+
+#### Na linha de comando:
 
 ```sh
+    $ ztranslator --help
+```
+
+ou na linha de comando com o python:
+
+```sh
+    $ python -m translator --help
+```
+
+#### Como um módulo python:
+
+```python
     In [1]: from translator import Translator
 
     In [2]: t = Translator(to_lang='pt-br')
@@ -23,35 +35,29 @@ This is a simple, yet powerful command line translator with mymemory.translated.
     Out[3]: 'Digite copyright, créditos ou licença para mais informações'
 ```
 
-## Usage as Script
+## Configuração para Desenvolvimento
 
 ```sh
-    $ python -m translator --help
+    $ git clone https://github.com/andreztz/ztranslator.git
+    $ virtualenv venv
+    $ source venv/bin/activate
+    $ python setup.py develop
 ```
 
-or
+## Histórico de lançamento
 
-```sh
-    $ ztranslator --help
-```
-
-## Release History
-
-- 0.0.3
-  - Work in progress
-
-## Meta
+-   0.0.3
+    -   O primeiro lançamento adequado.
+    -   Trabalho em andamento
 
 André Santos – [@ztzandre](https://twitter.com/ztzandre) – andreztz@gmail.com
 
 [https://github.com/andreztz/ztranslator](https://github.com/andreztz/)
 
-## Contributing
+## Contribua
 
 1. Fork it (<https://github.com/andreztz/ztranslator/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
-
-<!-- Markdown link & img dfn's -->
