@@ -7,6 +7,11 @@ def readme():
         return f.read()
 
 
+def required():
+    with open("requirements.txt") as f:
+        return f.read().splitlines()
+
+
 setup(
     name="ztranslator",
     version="0.0.3",
@@ -19,7 +24,7 @@ setup(
     url="https://github.com/andreztz/ztranslator",
     license="MIT",
     packages=find_packages(),
-    install_requires=["requests"],
+    install_requires=required(),
     entry_points={"console_scripts": ["ztranslator=translator.__main__:main"]},
     classifiers=[
         "Development Status :: 1 - Planning",
