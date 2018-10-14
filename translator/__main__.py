@@ -27,3 +27,5 @@ def main():
         Notification("Translator", translated).notify()
     else:
         print(translated)
+
+    clip.set(translated)
