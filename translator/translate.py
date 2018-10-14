@@ -41,13 +41,13 @@ class Translator:
             return next_best_match
 
     def _get_json(self, source):
-        _escaped_source = quote(source, "")
-        _base_url = "http://mymemory.translated.net"
-        _api_url = (
-            f"/api/get?q={_escaped_source}"  # join f strings
+        escaped_source = quote(source, "")
+        base_url = "http://mymemory.translated.net"
+        api_url = (
+            f"/api/get?q={escaped_source}"
             f"&langpair={self.from_lang}|{self.to_lang}"
         )
-        _headers = {}
-        _url = _base_url + _api_url
-        resp = get(_url)
+        headers = {}
+        url = base_url + api_url
+        resp = get(url)
         return resp.json()
