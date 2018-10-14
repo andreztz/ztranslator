@@ -40,6 +40,7 @@ ou na linha de comando com o python:
 ```sh
     $ git clone https://github.com/andreztz/ztranslator.git
     $ virtualenv venv
+    $ pip install PyGObject==3.30.1
     $ source venv/bin/activate
     $ python setup.py develop
 ```
