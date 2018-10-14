@@ -7,7 +7,7 @@ Simples tradutor de linha de comando, com mymemory.translated.net por trás. Voc
 ## Instalação:
 
 ```sh
-    $ pip install ztranslator
+$ pip install ztranslator
 ```
 
 ## Exemplos de uso:
@@ -15,39 +15,37 @@ Simples tradutor de linha de comando, com mymemory.translated.net por trás. Voc
 #### Na linha de comando:
 
 ```sh
-    $ ztranslator --help
+$ ztranslator --help
 ```
-
-ou na linha de comando com o python:
 
 ```sh
-    $ python -m translator --help
+$ python -m translator --help
 ```
 
-#### Como um módulo python:
+####Como um módulo python:
 
 ```python
-    In [1]: from translator import Translator
+In [1]: from translator import Translator
 
-    In [2]: t = Translator(to_lang='pt-br')
+In [2]: t = Translator(to_lang='pt-br')
 
-    In [3]: t.translate("Type copyright, credits or license for more information")
-    Out[3]: 'Digite copyright, créditos ou licença para mais informações'
+In [3]: t.translate("Type copyright, credits or license for more information")
+Out[3]: 'Digite copyright, créditos ou licença para mais informações'
 ```
 
 ## Configuração para Desenvolvimento
 
 ```sh
-    $ git clone https://github.com/andreztz/ztranslator.git
-    $ virtualenv venv
-    $ pip install PyGObject==3.30.1
-    $ source venv/bin/activate
-    $ python setup.py develop
+$ git clone https://github.com/andreztz/ztranslator.git
+$ virtualenv venv
+$ pip install PyGObject==3.30.1
+$ source venv/bin/activate
+$ python setup.py develop
 ```
 
 ## Histórico de lançamento
 
--   0.0.3
+-   0.0.4
     -   O primeiro lançamento adequado.
     -   Trabalho em andamento
 
