@@ -12,8 +12,8 @@ default_locale = locale.getdefaultlocale()[0]
 to_lang = default_locale.split(".")[0].lower().replace("_", "-")
 
 
-help_notify = """takes the text from the clipboard translates, displays \
-as notification and places the translated text in the clipboard.
+help_notify = """translates text from the clipboard, displays it \
+as notification, and places the translated text in the clipboard.
 """
 
 
@@ -23,7 +23,7 @@ def main():
     parser.add_argument(
         "--notify", action="store_const", const=True, help=help_notify
     )
-    parser.add_argument("--text", help="translate command line input text")
+    parser.add_argument("--text", help="translates command line input text")
     args = parser.parse_args()
 
     text = args.text if args.text else clip.get()
@@ -31,7 +31,7 @@ def main():
     translator = Translator(to_lang=args.lang)
     translated = translator.translate(text)
     if args.notify:
-        Notification("Translator", translated).notify()
+        Notification("", translated).notify()
     else:
         print(translated)
 
