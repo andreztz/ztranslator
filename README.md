@@ -2,7 +2,7 @@
 
 Simples tradutor de linha de comando, com mymemory.translated.net por trás. Você também pode usá-lo como um módulo python no seu código, ou pode configurar uma combinação de teclas de atalho no seu sistema para que execute o ztranlator. Para isso basta passar --notify como parametro, que o ztranslator se encarrega de pegar a última entrada na área de transferência para exibir o texto traduzido em um lindo balãozinho no seu desktop.
 
-![](header.png)
+![](header.gif)
 
 ## Instalação:
 
