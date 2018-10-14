@@ -1,6 +1,6 @@
 # ztranslator
 
-Simples tradutor de linha de comando, com mymemory.translated.net por trás. Você também pode usá-lo como um módulo python no seu código.
+Simples tradutor de linha de comando, com mymemory.translated.net por trás. Você também pode usá-lo como um módulo python no seu código, também pode configurar uma combinação de tecla de atalho no seu sistema para que execute o ztranlator.
 
 ![](header.png)
 
