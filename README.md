@@ -45,8 +45,7 @@ $ python setup.py develop
 
 ## Histórico de lançamento
 
--   0.0.4
-    -   O primeiro lançamento adequado.
+-   0.0.4 - O primeiro lançamento adequado.
     -   Trabalho em andamento
 
 André Santos – [@ztzandre](https://twitter.com/ztzandre) – andreztz@gmail.com
