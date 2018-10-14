@@ -14,7 +14,7 @@ def required():
 
 setup(
     name="ztranslator",
-    version="0.0.3",
+    version="0.0.4",
     description="powerful command line translator.",
     long_description=readme(),
     long_description_content_type="text/markdown",
