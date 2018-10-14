@@ -102,8 +102,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-
-doc-errors.txt
 .vscode
 
 todo.md
