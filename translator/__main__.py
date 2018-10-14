@@ -31,7 +31,7 @@ def main():
     translator = Translator(to_lang=args.lang)
     translated = translator.translate(text)
     if args.notify:
-        Notification("", translated).notify()
+        Notification("", translated)
     else:
         print(translated)
 
