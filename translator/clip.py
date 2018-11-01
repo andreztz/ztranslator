@@ -1,3 +1,4 @@
+# https://github.com/Shizmob/clippy
 # coding=utf-8
 # clippy
 # get or set text data on your clipboard.
