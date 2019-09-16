@@ -7,14 +7,9 @@ def readme():
         return f.read()
 
 
-def required():
-    with open("requirements.txt") as f:
-        return f.read().splitlines()
-
-
 setup(
     name="ztranslator",
-    version="0.0.5",
+    version="0.0.7",
     description="powerful command line translator.",
     long_description=readme(),
     long_description_content_type="text/markdown",
@@ -24,7 +19,7 @@ setup(
     url="https://github.com/andreztz/ztranslator",
     license="MIT",
     packages=find_packages(),
-    install_requires=required(),
+    install_requires=["requests>=2.20.0", "notify-send==0.0.12"],
     entry_points={"console_scripts": ["ztranslator=translator.__main__:main"]},
     classifiers=[
         "Development Status :: 1 - Planning",
