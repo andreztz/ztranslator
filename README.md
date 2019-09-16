@@ -37,15 +37,15 @@ Out[3]: 'Digite copyright, créditos ou licença para mais informações'
 
 ```sh
 $ git clone https://github.com/andreztz/ztranslator.git
+$ cd ztranslator
 $ virtualenv venv
-$ pip install PyGObject==3.30.1
 $ source venv/bin/activate
-$ python setup.py develop
+$ pip install -e .
 ```
 
 ## Histórico de lançamento
 
--   0.0.5 - O primeiro lançamento adequado.
+-   0.0.7 - O primeiro lançamento adequado.
     -   Trabalho em andamento
 
 André Santos – [@ztzandre](https://twitter.com/ztzandre) – andreztz@gmail.com
