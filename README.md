@@ -22,7 +22,7 @@ $ ztranslator --help
 $ python -m translator --help
 ```
 
-#### Como um módulo python:
+#### No seu código python:
 
 ```python
 In [1]: from translator import Translator
