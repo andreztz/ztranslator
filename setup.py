@@ -19,7 +19,7 @@ setup(
     url="https://github.com/andreztz/ztranslator",
     license="MIT",
     packages=find_packages(),
-    install_requires=["requests>=2.20.0", "notify-send==0.0.12"],
+    install_requires=["requests>=2.20.0", "notify-send==0.0.13"],
     entry_points={"console_scripts": ["ztranslator=translator.__main__:main"]},
     classifiers=[
         "Development Status :: 1 - Planning",
