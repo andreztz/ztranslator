@@ -1,0 +1,160 @@
+[[package]]
+category = "main"
+description = "Python package for providing Mozilla's CA Bundle."
+name = "certifi"
+optional = false
+python-versions = "*"
+version = "2019.11.28"
+
+[[package]]
+category = "main"
+description = "Universal encoding detector for Python 2 and 3"
+name = "chardet"
+optional = false
+python-versions = "*"
+version = "3.0.4"
+
+[[package]]
+category = "main"
+description = "Internationalized Domain Names in Applications (IDNA)"
+name = "idna"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "2.9"
+
+[[package]]
+category = "main"
+description = "notify-send notify."
+name = "notify-send"
+optional = false
+python-versions = "*"
+version = "0.0.13"
+
+[package.dependencies]
+PyGObject = ">=3.34.0"
+pycairo = ">=1.18.1"
+pypiwin32 = "223"
+pywin32 = "224"
+
+[[package]]
+category = "main"
+description = "Python interface for cairo"
+marker = "sys_platform == \"linux\""
+name = "pycairo"
+optional = false
+python-versions = ">=3.5, <4"
+version = "1.19.1"
+
+[[package]]
+category = "main"
+description = "Python bindings for GObject Introspection"
+marker = "sys_platform == \"linux\""
+name = "pygobject"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
+version = "3.36.0"
+
+[package.dependencies]
+pycairo = ">=1.11.1"
+
+[[package]]
+category = "main"
+description = ""
+marker = "sys_platform == \"win32\""
+name = "pypiwin32"
+optional = false
+python-versions = "*"
+version = "223"
+
+[package.dependencies]
+pywin32 = ">=223"
+
+[[package]]
+category = "main"
+description = "Python for Window Extensions"
+marker = "sys_platform == \"win32\""
+name = "pywin32"
+optional = false
+python-versions = "*"
+version = "224"
+
+[[package]]
+category = "main"
+description = "Python HTTP for Humans."
+name = "requests"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "2.23.0"
+
+[package.dependencies]
+certifi = ">=2017.4.17"
+chardet = ">=3.0.2,<4"
+idna = ">=2.5,<3"
+urllib3 = ">=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26"
+
+[package.extras]
+security = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)"]
+socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7)", "win-inet-pton"]
+
+[[package]]
+category = "main"
+description = "HTTP library with thread-safe connection pooling, file post, and more."
+name = "urllib3"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
+version = "1.25.8"
+
+[package.extras]
+brotli = ["brotlipy (>=0.6.0)"]
+secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "ipaddress"]
+socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7,<2.0)"]
+
+[metadata]
+content-hash = "dac7373962a4002d8c7eb38de816902fd5aaa1571bd22a185adcb0964e460009"
+python-versions = "^3.6"
+
+[metadata.files]
+certifi = [
+    {file = "certifi-2019.11.28-py2.py3-none-any.whl", hash = "sha256:017c25db2a153ce562900032d5bc68e9f191e44e9a0f762f373977de9df1fbb3"},
+    {file = "certifi-2019.11.28.tar.gz", hash = "sha256:25b64c7da4cd7479594d035c08c2d809eb4aab3a26e5a990ea98cc450c320f1f"},
+]
+chardet = [
+    {file = "chardet-3.0.4-py2.py3-none-any.whl", hash = "sha256:fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"},
+    {file = "chardet-3.0.4.tar.gz", hash = "sha256:84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae"},
+]
+idna = [
+    {file = "idna-2.9-py2.py3-none-any.whl", hash = "sha256:a068a21ceac8a4d63dbfd964670474107f541babbd2250d61922f029858365fa"},
+    {file = "idna-2.9.tar.gz", hash = "sha256:7588d1c14ae4c77d74036e8c22ff447b26d0fde8f007354fd48a7814db15b7cb"},
+]
+notify-send = [
+    {file = "notify-send-0.0.13.tar.gz", hash = "sha256:ac2ba2257f5b2932e8ff4d91b23f11adcfe0a45c88c23f1a0be7ff10bc63c040"},
+    {file = "notify_send-0.0.13-py3-none-any.whl", hash = "sha256:3ae252422263efff4cc69c3aa0f3460c06eb45378b8138b1e92375f4554ee232"},
+]
+pycairo = [
+    {file = "pycairo-1.19.1.tar.gz", hash = "sha256:2c143183280feb67f5beb4e543fd49990c28e7df427301ede04fc550d3562e84"},
+]
+pygobject = [
+    {file = "PyGObject-3.36.0.tar.gz", hash = "sha256:b97f570e55017fcd3732164811f24ecf63983a4834f61b55b0aaf64ecefac856"},
+]
+pypiwin32 = [
+    {file = "pypiwin32-223-py3-none-any.whl", hash = "sha256:67adf399debc1d5d14dffc1ab5acacb800da569754fafdc576b2a039485aa775"},
+    {file = "pypiwin32-223.tar.gz", hash = "sha256:71be40c1fbd28594214ecaecb58e7aa8b708eabfa0125c8a109ebd51edbd776a"},
+]
+pywin32 = [
+    {file = "pywin32-224-cp27-cp27m-win32.whl", hash = "sha256:6852ceac5fdd7a146b570655c37d9eacd520ed1eaeec051ff41c6fc94243d8bf"},
+    {file = "pywin32-224-cp27-cp27m-win_amd64.whl", hash = "sha256:6dbc4219fe45ece6a0cc6baafe0105604fdee551b5e876dc475d3955b77190ec"},
+    {file = "pywin32-224-cp35-cp35m-win32.whl", hash = "sha256:9bd07746ce7f2198021a9fa187fa80df7b221ec5e4c234ab6f00ea355a3baf99"},
+    {file = "pywin32-224-cp35-cp35m-win_amd64.whl", hash = "sha256:5f265d72588806e134c8e1ede8561739071626ea4cc25c12d526aa7b82416ae5"},
+    {file = "pywin32-224-cp36-cp36m-win32.whl", hash = "sha256:32b37abafbfeddb0fe718008d6aada5a71efa2874f068bee1f9e703983dcc49a"},
+    {file = "pywin32-224-cp36-cp36m-win_amd64.whl", hash = "sha256:35451edb44162d2f603b5b18bd427bc88fcbc74849eaa7a7e7cfe0f507e5c0c8"},
+    {file = "pywin32-224-cp37-cp37m-win32.whl", hash = "sha256:22e218832a54ed206452c8f3ca9eff07ef327f8e597569a4c2828be5eaa09a77"},
+    {file = "pywin32-224-cp37-cp37m-win_amd64.whl", hash = "sha256:4eda2e1e50faa706ff8226195b84fbcbd542b08c842a9b15e303589f85bfb41c"},
+]
+requests = [
+    {file = "requests-2.23.0-py2.py3-none-any.whl", hash = "sha256:43999036bfa82904b6af1d99e4882b560e5e2c68e5c4b0aa03b655f3d7d73fee"},
+    {file = "requests-2.23.0.tar.gz", hash = "sha256:b3f43d496c6daba4493e7c431722aeb7dbc6288f52a6e04e7b6023b0247817e6"},
+]
+urllib3 = [
+    {file = "urllib3-1.25.8-py2.py3-none-any.whl", hash = "sha256:2f3db8b19923a873b3e5256dc9c2dedfa883e33d87c690d9c7913e1f40673cdc"},
+    {file = "urllib3-1.25.8.tar.gz", hash = "sha256:87716c2d2a7121198ebcb7ce7cccf6ce5e9ba539041cfbaeecfb641dc0bf6acc"},
+]
