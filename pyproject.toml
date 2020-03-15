@@ -7,9 +7,9 @@ license = "MIT"
 readme = "README.md"
 classifiers = [
     "Development Status :: 1 - Planning",
+    "Intended Audience :: Developers",
     "Intended Audience :: End Users/Desktop",
     "Programming Language :: Python :: 3 :: Only",
-    "Topic :: Multimedia :: Sound/Audio :: Players",
     "Topic :: Utilities"
 ]
 
