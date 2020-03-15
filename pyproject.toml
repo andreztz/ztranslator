@@ -3,6 +3,9 @@ name = "ztranslator"
 version = "0.0.8"
 description = "Powerful command line translator."
 authors = ["André P. Santos <andreztz@gmail.com>"]
+packages = [
+    { include = "translator" }
+]
 license = "MIT"
 readme = "README.md"
 classifiers = [
