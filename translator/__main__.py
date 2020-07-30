@@ -23,16 +23,18 @@ def main():
     parser.add_argument(
         "--notify", action="store_const", const=True, help=help_notify
     )
-    parser.add_argument("--text", help="translates command line input text")
+    parser.add_argument(
+        "--text",
+        nargs="+",
+        help="translates command line input text"
+    )
     args = parser.parse_args()
 
-    text = args.text if args.text else clip.get()
-
+    text = " ".join(args.text) if args.text else clip.get()
     translator = Translator(to_lang=args.lang)
     translated = translator.translate(text)
     if args.notify:
         Notification("", translated)
     else:
         print(translated)
-
     clip.set(translated)
