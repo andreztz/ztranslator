@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ztranslator"
-version = "0.0.9"
+version = "0.1.0"
 description = "Powerful command line translator."
 authors = ["André P. Santos <andreztz@gmail.com>"]
 packages = [
@@ -20,6 +20,7 @@ classifiers = [
 python = "^3.6"
 requests = "^2.23.0"
 notify-send = "^0.0.13"
+googletrans = "3.1.0a0"
 
 [tool.poetry.scripts]
 ztranslator="translator.__main__:main"
