@@ -1,6 +1,6 @@
 # ztranslator
 
-Simples tradutor de linha de comando, com mymemory.translated.net por trás. Você pode configurar uma combinação de teclas de atalho para que execute o ztranslator. Para isso basta passar --notify como parametro, que o ztranslator se encarrega de pegar a última entrada na área de transferência e exibir o texto traduzido em um simpático balãozinho no seu desktop.
+Simples tradutor de linha de comando. Você pode configurar uma combinação de teclas de atalho para que execute o ztranslator. Para isso basta passar --notify como parametro, que o ztranslator se encarrega de pegar a última entrada na área de transferência e exibir o texto traduzido em um simpático balãozinho no seu desktop.
 
 ![](header.gif)
 
@@ -27,7 +27,7 @@ $ python -m translator --help
 ```python
 In [1]: from translator import Translator
 
-In [2]: t = Translator(to_lang='pt-br')
+In [2]: t = Translator(from_lan="pt", to_lang='en', source="google")
 
 In [3]: t.translate("Type copyright, credits or license for more information")
 Out[3]: 'Digite copyright, créditos ou licença para mais informações'
@@ -45,6 +45,7 @@ $ pip install -e .
 
 ## Histórico de lançamento
 
+-   0.1.0 - Adiciona acesso a api do google translate via googletrans.
 -   0.0.7 - O primeiro lançamento adequado.
     -   Trabalho em andamento
 
