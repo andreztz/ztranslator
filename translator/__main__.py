@@ -4,7 +4,7 @@ import argparse
 import locale
 
 from translator import clip
-from notify import Notification
+from notify import notification
 
 from translator.translate import Translator
 
@@ -22,12 +22,8 @@ help_source = """Translation source may be google or mymemory. Default is google
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--to-lang", default="pt", help="to language"
-    )
-    parser.add_argument(
-        "--from-lang", default="en", help="from language"
-    )
+    parser.add_argument("--to-lang", default="pt", help="to language")
+    parser.add_argument("--from-lang", default="en", help="from language")
     parser.add_argument(
         "--notify", action="store_const", const=True, help=help_notify
     )
@@ -52,7 +48,7 @@ def main():
     translated = translator.translate(text)
 
     if args.notify:
-        Notification("", translated)
+        notification(translated, app_name="ztranslation")
     else:
         print(translated)
 
