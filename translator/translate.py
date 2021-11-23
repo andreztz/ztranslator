@@ -14,6 +14,16 @@ from requests.utils import quote
 import googletrans
 
 
+class Error(Exception):
+    pass
+
+
+class SourceNotFound(Error):
+    def __init__(self):
+        message = "The source does not exist. Try `google` or `mymemory`."
+        super().__init__(message)
+
+
 class TranslatorBase(ABC):
     @abstractmethod
     def translate(self, text):
@@ -75,23 +85,25 @@ class GoogleTranslator(TranslatorBase):
         return text.text
 
 
-class Translator:
-    options = {
+class SourceManager:
+    sources = {
         "google": GoogleTranslator,
         "mymemory": MyMemoryTranslator,
     }
 
+    def __init__(self, source):
+        self.source = source
+
+    def get(self, from_lang, to_lang):
+        translator = self.sources.get(self.source, None)
+        if translator is None:
+            raise SourceNotFound()
+        return translator(from_lang, to_lang)
+
+
+class Translator:
     def __init__(self, from_lang, to_lang, source):
-        self.__translator = self.set_translator(source)(from_lang, to_lang)
+        self._translator = SourceManager(source).get(from_lang, to_lang)
 
     def translate(self, text):
-        return self.__translator.translate(text)
-
-    def set_translator(self, option):
-        _translator = self.options.get(option, None)
-
-        if _translator is None:
-            raise Exception(
-                "The source does not exist. Try `google` or `mymemory`."
-            )
-        return _translator
+        return self._translator.translate(text)
