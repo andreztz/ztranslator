@@ -1,6 +1,6 @@
 # ztranslator
 
-Simples tradutor de linha de comando. Você pode configurar uma combinação de teclas de atalho para que execute o ztranslator, para isso basta passar --notify como parametro de linha comando, que o ztranslator se encarrega de pegar a última entrada na área de transferência e exibir o texto traduzido em um simpático balãozinho na sua .
+Simples tradutor de linha de comando. Você pode configurar uma combinação de teclas de atalho para que execute o ztranslator, para isso basta passar --notify como parametro de linha comando, que o ztranslator se encarrega de pegar a última entrada na área de transferência e exibir o texto traduzido em um simpático balãozinho na sua Área de Trabalho.
 
 ![](header.gif)
 
