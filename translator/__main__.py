@@ -12,26 +12,23 @@ default_locale = locale.getdefaultlocale()[0]
 to_lang = default_locale.split(".")[0].lower().replace("_", "-")
 
 
-help_notify = """translates text from the clipboard, displays it \
+help_notify = """Translates text from the clipboard, displays it \
 as notification, and places the translated text in the clipboard.
 """
 
-help_source = """Translation source may be google or mymemory. Default is google.
+help_source = """The API translation can be from google or mymemory. \
+Default is google.
 """
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--to-lang", default="pt", help="to language")
-    parser.add_argument("--from-lang", default="en", help="from language")
+    parser.add_argument("--target-lang", default="pt", help="Target language.")
+    parser.add_argument("--source-lang", default="en", help="Source language.")
+    parser.add_argument("--notify", action="store_const", const=True, help=help_notify)
+    parser.add_argument("--text", nargs="+", help="Translates command line input text.")
     parser.add_argument(
-        "--notify", action="store_const", const=True, help=help_notify
-    )
-    parser.add_argument(
-        "--text", nargs="+", help="translates command line input text"
-    )
-    parser.add_argument(
-        "--source",
+        "--source-api",
         choices=["google", "mymemory"],
         default="google",
         help=help_source,
@@ -42,14 +39,16 @@ def main():
     text = " ".join(args.text) if args.text else clip.get()
 
     translator = Translator(
-        from_lang=args.from_lang, to_lang=args.to_lang, source=args.source
+        source_lang=args.source_lang,
+        target_lang=args.target_lang,
+        source_api=args.source_api,
     )
 
-    translated = translator.translate(text)
+    translated_text = translator.translate(text)
 
     if args.notify:
-        notification(translated, app_name="ztranslation")
+        notification(translated_text, app_name="ztranslation")
     else:
-        print(translated)
+        print(translated_text)
 
-    clip.set(translated)
+    clip.set(translated_text)
