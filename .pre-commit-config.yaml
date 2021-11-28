@@ -27,4 +27,4 @@ repos:
         entry: pytest -s tests/
         always_run: true
         pass_filenames: false
-        language: system
+        language: python
