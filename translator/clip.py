@@ -52,12 +52,8 @@ def which(name, flag=os.X_OK):
     """ Search PATH for given executable name. """
     executables = []
 
-    paths = [
-        entry for entry in os.environ.get("PATH", "").split(os.pathsep) if entry
-    ]
-    extensions = [
-        ext for ext in os.environ.get("PATHEXT", "").split(os.pathsep) if ext
-    ]
+    paths = [entry for entry in os.environ.get("PATH", "").split(os.pathsep) if entry]
+    extensions = [ext for ext in os.environ.get("PATHEXT", "").split(os.pathsep) if ext]
 
     for entry in paths:
         base = path.join(entry, name)
@@ -258,8 +254,7 @@ def x_xclip_get():
 
     for clipboard in X_CLIPBOARDS:
         process = subprocess.Popen(
-            ["xclip", "-selection", clipboard.lower(), "-o"],
-            stdout=subprocess.PIPE,
+            ["xclip", "-selection", clipboard.lower(), "-o"], stdout=subprocess.PIPE
         )
         raw, _ = process.communicate()
 
@@ -280,8 +275,7 @@ def x_xclip_set(data):
 
     for clipboard in X_CLIPBOARDS:
         process = subprocess.Popen(
-            ["xclip", "-selection", clipboard.lower(), "-i"],
-            stdin=subprocess.PIPE,
+            ["xclip", "-selection", clipboard.lower(), "-i"], stdin=subprocess.PIPE
         )
         process.communicate(raw)
 
@@ -337,25 +331,19 @@ def x_xsel_set(data):
 
 def unknown_clear():
     raise RuntimeError(
-        "clippy hasn't been ported to this platform ({}) yet.".format(
-            sys.platform
-        )
+        "clippy hasn't been ported to this platform ({}) yet.".format(sys.platform)
     )
 
 
 def unknown_get():
     raise RuntimeError(
-        "clippy hasn't been ported to this platform ({}) yet.".format(
-            sys.platform
-        )
+        "clippy hasn't been ported to this platform ({}) yet.".format(sys.platform)
     )
 
 
 def unknown_set(data):
     raise RuntimeError(
-        "clippy hasn't been ported to this platform ({}) yet.".format(
-            sys.platform
-        )
+        "clippy hasn't been ported to this platform ({}) yet.".format(sys.platform)
     )
 
 
@@ -400,4 +388,3 @@ if __name__ == "__main__":
     clear()
     assert get() is None
     print("success")
-
