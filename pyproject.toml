@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ztranslator"
-version = "0.1.0"
+version = "1.0.0"
 description = "Powerful command line translator."
 authors = ["André P. Santos <andreztz@gmail.com>"]
 packages = [
