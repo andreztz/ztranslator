@@ -45,6 +45,7 @@ $ pip install -e .
 
 ## Histórico de lançamento
 
+-   1.0.0 - Altera interface da API e linha de comando.
 -   0.1.0 - Adiciona acesso a api do google translate via googletrans.
 -   0.0.7 - O primeiro lançamento adequado.
     -   Trabalho em andamento
