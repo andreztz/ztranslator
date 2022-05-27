@@ -243,7 +243,7 @@ python-versions = "*"
 
 [[package]]
 name = "notify-send"
-version = "0.0.19"
+version = "0.0.20"
 description = "notify-send notify."
 category = "main"
 optional = false
@@ -257,7 +257,7 @@ pywin32 = {version = "302", markers = "sys_platform == \"win32\""}
 
 [package.extras]
 build = ["build", "twine"]
-dev = ["pytest"]
+dev = ["pytest", "flake8"]
 
 [[package]]
 name = "packaging"
@@ -525,7 +525,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7.0"
-content-hash = "891e8af9bcb8bc03b7f77c43472d3bd52bbbd382ee3f4b2b9f74ba3847c0b10e"
+content-hash = "78ba0eb038f0345ef474f0f1d0372bba1f04fc95539626769410bdf06e4ab62a"
 
 [metadata.files]
 atomicwrites = [
@@ -624,8 +624,8 @@ nodeenv = [
     {file = "nodeenv-1.6.0.tar.gz", hash = "sha256:3ef13ff90291ba2a4a7a4ff9a979b63ffdd00a464dbe04acf0ea6471517a4c2b"},
 ]
 notify-send = [
-    {file = "notify-send-0.0.19.tar.gz", hash = "sha256:7d236f882546145efec59310d1951d9a755969b21ef66908cea70fb75b6b755f"},
-    {file = "notify_send-0.0.19-py3-none-any.whl", hash = "sha256:acc952e9e94bfd14b776fbd7a984d0df005f264562c6eff7ca29fa38e95ce5aa"},
+    {file = "notify-send-0.0.20.tar.gz", hash = "sha256:6fddbc5b201728984d2de809959bb6aecf9abb0de5cfa55c7324ca6f48f41e03"},
+    {file = "notify_send-0.0.20-py3-none-any.whl", hash = "sha256:3e774faa36a1e664b7ebd6dbfb8822e358dffb74d7d98b748b1178565988c04a"},
 ]
 packaging = [
     {file = "packaging-21.3-py3-none-any.whl", hash = "sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"},
