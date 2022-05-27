@@ -49,17 +49,27 @@ def to_bytes(input, encoding="utf-8"):
 
 
 def which(name, flag=os.X_OK):
-    """ Search PATH for given executable name. """
+    """Search PATH for given executable name."""
     executables = []
 
-    paths = [entry for entry in os.environ.get("PATH", "").split(os.pathsep) if entry]
-    extensions = [ext for ext in os.environ.get("PATHEXT", "").split(os.pathsep) if ext]
+    paths = [
+        entry
+        for entry in os.environ.get("PATH", "").split(os.pathsep)
+        if entry
+    ]
+    extensions = [
+        ext for ext in os.environ.get("PATHEXT", "").split(os.pathsep) if ext
+    ]
 
     for entry in paths:
         base = path.join(entry, name)
 
         # No PATHEXT? Go for bare executables.
-        if not extensions and os.access(base, flag) and base not in executables:
+        if (
+            not extensions
+            and os.access(base, flag)
+            and base not in executables
+        ):
             executables.append(base)
         else:
             # Search PATHEXT.
@@ -72,7 +82,7 @@ def which(name, flag=os.X_OK):
 
 
 def supported():
-    """ Return whether clippy supports this platform or not. """
+    """Return whether clippy supports this platform or not."""
     return get != unknown_get and set != unknown_set and clear != unknown_clear
 
 
@@ -87,7 +97,7 @@ WIN32_UNICODE_ENCODING = "utf-16-le"
 
 
 def win32_setup():
-    """ Setup relevant ctypes argtypes and return (user32, kernel32) pair. """
+    """Setup relevant ctypes argtypes and return (user32, kernel32) pair."""
     # Make ctypes happy.
     if not hasattr(win32_setup, "user32"):
         win32_setup.user32 = ctypes.windll.user32
@@ -114,7 +124,7 @@ def win32_setup():
 
 
 def win32_clear():
-    """ Clear clipboard text data. """
+    """Clear clipboard text data."""
     user32, kernel32 = win32_setup()
 
     window = user32.GetActiveWindow()
@@ -124,7 +134,7 @@ def win32_clear():
 
 
 def win32_get():
-    """ Get clipboard text data. Returns a unicode instance or None. """
+    """Get clipboard text data. Returns a unicode instance or None."""
     user32, kernel32 = win32_setup()
     data = None
 
@@ -153,7 +163,7 @@ def win32_get():
 
 
 def win32_set(data):
-    """ Set clipboard text data. Accepts unicode or str. """
+    """Set clipboard text data. Accepts unicode or str."""
     user32, kernel32 = win32_setup()
 
     if not unicode_or_bytes(data):
@@ -181,7 +191,7 @@ def win32_set(data):
 
 
 def win32_set_data(type, data):
-    """ Set clipboard data for specific type from data. """
+    """Set clipboard data for specific type from data."""
     user32, kernel32 = win32_setup()
     ptr = kernel32.GlobalAlloc(0, len(data) + 1)
 
@@ -204,14 +214,14 @@ def win32_set_data(type, data):
 
 
 def osx_pb_clear():
-    """ Clear clipboard text data. """
+    """Clear clipboard text data."""
     with open(os.devnull, "rb") as f:
         process = subprocess.Popen(["pbcopy"], stdin=f)
         process.wait()
 
 
 def osx_pb_get():
-    """ Get clipboard text data. Return a unicode instance, or None. """
+    """Get clipboard text data. Return a unicode instance, or None."""
     process = subprocess.Popen(["pbpaste"], stdout=subprocess.PIPE)
     data, _ = process.communicate()
     encoding = locale.getpreferredencoding()
@@ -220,7 +230,7 @@ def osx_pb_get():
 
 
 def osx_pb_set(data):
-    """ Set clipboard text data. Accepts a unicode or str. """
+    """Set clipboard text data. Accepts a unicode or str."""
     if not unicode_or_bytes(data):
         raise TypeError("Clipboard data can only be unicode or str.")
     data = to_unicode(data)
@@ -238,7 +248,7 @@ X_CLIPBOARDS = ["CLIPBOARD", "PRIMARY"]
 
 
 def x_xclip_clear():
-    """ Clear clipboard text data. """
+    """Clear clipboard text data."""
     with open(os.devnull, "rb") as f:
         for clipboard in X_CLIPBOARDS:
             process = subprocess.Popen(
@@ -248,13 +258,14 @@ def x_xclip_clear():
 
 
 def x_xclip_get():
-    """ Get clipboard text data. Return a unicode instance, or None. """
+    """Get clipboard text data. Return a unicode instance, or None."""
     raw = None
     encoding = locale.getpreferredencoding()
 
     for clipboard in X_CLIPBOARDS:
         process = subprocess.Popen(
-            ["xclip", "-selection", clipboard.lower(), "-o"], stdout=subprocess.PIPE
+            ["xclip", "-selection", clipboard.lower(), "-o"],
+            stdout=subprocess.PIPE,
         )
         raw, _ = process.communicate()
 
@@ -265,7 +276,7 @@ def x_xclip_get():
 
 
 def x_xclip_set(data):
-    """ Set clipboard text data. Accepts a unicode or str. """
+    """Set clipboard text data. Accepts a unicode or str."""
     if not unicode_or_bytes(data):
         raise TypeError("Clipboard data can only be unicode or str.")
     data = to_unicode(data)
@@ -275,7 +286,8 @@ def x_xclip_set(data):
 
     for clipboard in X_CLIPBOARDS:
         process = subprocess.Popen(
-            ["xclip", "-selection", clipboard.lower(), "-i"], stdin=subprocess.PIPE
+            ["xclip", "-selection", clipboard.lower(), "-i"],
+            stdin=subprocess.PIPE,
         )
         process.communicate(raw)
 
@@ -284,7 +296,7 @@ def x_xclip_set(data):
 
 
 def x_xsel_clear():
-    """ Clear clipboard text data. """
+    """Clear clipboard text data."""
     with open(os.devnull, "rb") as f:
         for clipboard in X_CLIPBOARDS:
             process = subprocess.Popen(
@@ -294,7 +306,7 @@ def x_xsel_clear():
 
 
 def x_xsel_get():
-    """ Get clipboard text data. Return a unicode instance, or None. """
+    """Get clipboard text data. Return a unicode instance, or None."""
     raw = None
     encoding = locale.getpreferredencoding()
 
@@ -311,7 +323,7 @@ def x_xsel_get():
 
 
 def x_xsel_set(data):
-    """ Set clipboard text data. Accepts a unicode or str. """
+    """Set clipboard text data. Accepts a unicode or str."""
     if not unicode_or_bytes(data):
         raise TypeError("Clipboard data can only be unicode or str.")
     data = to_unicode(data)
@@ -331,19 +343,25 @@ def x_xsel_set(data):
 
 def unknown_clear():
     raise RuntimeError(
-        "clippy hasn't been ported to this platform ({}) yet.".format(sys.platform)
+        "clippy hasn't been ported to this platform ({}) yet.".format(
+            sys.platform
+        )
     )
 
 
 def unknown_get():
     raise RuntimeError(
-        "clippy hasn't been ported to this platform ({}) yet.".format(sys.platform)
+        "clippy hasn't been ported to this platform ({}) yet.".format(
+            sys.platform
+        )
     )
 
 
 def unknown_set(data):
     raise RuntimeError(
-        "clippy hasn't been ported to this platform ({}) yet.".format(sys.platform)
+        "clippy hasn't been ported to this platform ({}) yet.".format(
+            sys.platform
+        )
     )
 
 
@@ -376,12 +394,12 @@ else:
 if __name__ == "__main__":
     print("testing ASCII...")
     set("foo!")
-    assert get() == u"foo!"
+    assert get() == "foo!"
     print("success")
 
     print("testing Unicode...")
-    set(u"( ≖‿≖)")
-    assert get() == u"( ≖‿≖)"
+    set("( ≖‿≖)")
+    assert get() == "( ≖‿≖)"
     print("success")
 
     print("testing clear...")

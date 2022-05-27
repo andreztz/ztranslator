@@ -42,7 +42,9 @@ class MyMemoryTranslator(TranslatorBase):
     def translate(self, source):
         if self.source_lang != self.target_lang:
             self.source_list = wrap(source, 1000, replace_whitespace=False)
-            source = " ".join(self._get_translation(s) for s in self.source_list)
+            source = " ".join(
+                self._get_translation(s) for s in self.source_list
+            )
             return source
         return source
 
@@ -98,7 +100,9 @@ class SourceManager:
 
 class Translator:
     def __init__(self, source_lang, target_lang, source_api):
-        self._translator = SourceManager(source_api).get(source_lang, target_lang)
+        self._translator = SourceManager(source_api).get(
+            source_lang, target_lang
+        )
 
     def translate(self, text):
         return self._translator.translate(text)

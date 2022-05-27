@@ -25,8 +25,12 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--target-lang", default="pt", help="Target language.")
     parser.add_argument("--source-lang", default="en", help="Source language.")
-    parser.add_argument("--notify", action="store_const", const=True, help=help_notify)
-    parser.add_argument("--text", nargs="+", help="Translates command line input text.")
+    parser.add_argument(
+        "--notify", action="store_const", const=True, help=help_notify
+    )
+    parser.add_argument(
+        "--text", nargs="+", help="Translates command line input text."
+    )
     parser.add_argument(
         "--source-api",
         choices=["google", "mymemory"],
