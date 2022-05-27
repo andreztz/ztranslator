@@ -33,6 +33,17 @@ build:
 publish:
 	${POETRY} publish
 
+
+.PHONY: setup-pre-commit
+setup-pre-commit:
+	pre-commit install
+
+
+.PHONY: run-pre-commit
+run-pre-commit:
+	pre-commit run --all-files
+
+
 .PHONY: test
 test:
 	poetry run pytest -s -v
