@@ -19,7 +19,7 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.7.0"
 requests = "^2.23.0"
-notify-send = "^0.0.19"
+notify-send = "^0.0.20"
 googletrans = "4.0.0rc1"
 
 [tool.poetry.scripts]
