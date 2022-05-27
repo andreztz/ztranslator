@@ -30,6 +30,9 @@ pytest = "^6.2.5"
 flake8 = "^4.0.1"
 pre-commit = "^2.15.0"
 
+[tool.black]
+line-length = 79
+
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
