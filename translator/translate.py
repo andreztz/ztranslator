@@ -18,19 +18,19 @@ class Error(Exception):
     pass
 
 
-class SourceNotFound(Error):
-    def __init__(self):
-        message = "The source API does not exist. Try `google` or `mymemory`."
-        super().__init__(message)
+class ProviderNotFound(Error):
+    def __init__(self):  # TODO: inform provider name on message
+        msg = "The provider does not exist. Try `google` or `mymemory`."
+        super().__init__(msg)
 
 
-class TranslatorBase(ABC):
+class ProviderBase(ABC):
     @abstractmethod
     def translate(self, text):
         pass
 
 
-class MyMemoryTranslator(TranslatorBase):
+class MyMemoryTranslator(ProviderBase):
     """mymemory.translated.net"""
 
     base_url = "http://mymemory.translated.net"
@@ -72,7 +72,7 @@ class MyMemoryTranslator(TranslatorBase):
         return resp.json()
 
 
-class GoogleTranslator(TranslatorBase):
+class GoogleTranslator(ProviderBase):
     def __init__(self, source_lang, target_lang):
         self.source_lang = source_lang
         self.target_lang = target_lang
@@ -85,22 +85,22 @@ class GoogleTranslator(TranslatorBase):
         return text.text
 
 
-class SourceManager:
-    sources = {"google": GoogleTranslator, "mymemory": MyMemoryTranslator}
+class ProviderManager:
+    _providers = {"google": GoogleTranslator, "mymemory": MyMemoryTranslator}
 
-    def __init__(self, source_api):
-        self.api = source_api
+    def __init__(self, provider_api):
+        self.api = provider_api
 
     def get(self, source_lang, target_lang):
-        translator = self.sources.get(self.api, None)
+        translator = self._providers.get(self.api, None)
         if translator is None:
-            raise SourceNotFound()
+            raise ProviderNotFound()
         return translator(source_lang, target_lang)
 
 
 class Translator:
-    def __init__(self, source_lang, target_lang, source_api):
-        self._translator = SourceManager(source_api).get(
+    def __init__(self, source_lang, target_lang, provider_api):
+        self._translator = ProviderManager(provider_api).get(
             source_lang, target_lang
         )
 
