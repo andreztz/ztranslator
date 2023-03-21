@@ -20,6 +20,12 @@ help_source = """The API translation can be from google or mymemory. \
 Default is google.
 """
 
+help_provider_api = (
+    "The API provider for translation. "
+    "The available options are `google` and `mymemory`. "
+    "The default option is `google`"
+)
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -35,7 +41,14 @@ def main():
         "--source-api",
         choices=["google", "mymemory"],
         default="google",
+        dest="provider_api",
         help=help_source,
+    )
+    parser.add_argument(
+        "--provider-api",
+        choices=["google", "mymemory"],
+        default="google",
+        help=help_provider_api,
     )
 
     args = parser.parse_args()
@@ -45,7 +58,7 @@ def main():
     translator = Translator(
         source_lang=args.source_lang,
         target_lang=args.target_lang,
-        source_api=args.source_api,
+        provider_api=args.provider_api,
     )
 
     translated_text = translator.translate(text)
