@@ -53,7 +53,7 @@ def main():
 
     args = parser.parse_args()
 
-    text = " ".join(args.text) if args.text else clip.get()
+    text = "".join(args.text) if args.text else clip.get()
 
     translator = Translator(
         source_lang=args.source_lang,
