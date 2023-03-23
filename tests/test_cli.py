@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 import translator
 from translator import Translator
-from translator.__main__ import main
+from translator.cli import main
 
 text = "Hello World!"
 source_lang = "en"
@@ -31,9 +31,9 @@ def test_cli_is_callled_with_correct_params(_):
     translator_mock = MagicMock(spec=Translator)
     translator_mock.translate.return_value = "Olá Mundo!!"
     with patch.object(
-        translator.__main__, "Translator", return_value=translator_mock
+        translator.cli, "Translator", return_value=translator_mock
     ) as _mock:
-        translator.__main__.main()
+        translator.cli.main()
         _mock.assert_called_once_with(
             source_lang=source_lang,
             target_lang=target_lang,
