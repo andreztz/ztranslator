@@ -67,8 +67,8 @@ ztranslator --text "Bonjour" --provider-api mymemory --source-lang fr --target-l
 **Observações:**
 
 - A opção `--source-api` foi descontinuada nessa versão. É recomendado usar `--provider-api` ao invés.
-- Se nenhum texto é dado como entrada, o programa pega a primeira da área de notificação.
-- O programa sempre colocará o texto traduzido na área de notificação.
+- Se nenhum texto é dado como entrada, a primeira opção da área de transferência é usada como entrada.
+- O programa sempre colocará o texto traduzido na área de transferência.
 
 
 ### Exemplo de uso em python:
