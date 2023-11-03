@@ -34,7 +34,7 @@ $ pip install ztranslator
 - `--target-lang`: Especifica o idioma de destino para a tradução. O padrão é o 
 idioma definido como padrão no seu sistema operacional. 
 - `--source-lang`: Especifica o idioma de origem para a tradução.
-- `--notify`: Traduz o texto da área de transferência, exibe-o como uma notificação.
+- `--notify`: Exibe o texto traduzido como uma notificação.
 - `--text`: Traduz o texto especificado.
 - `--provider-api`: Define o provedor de API para tradução. O padrão é o `google`.
 
